@@ -1,11 +1,24 @@
-import './index.css'
+import { useEffect } from 'react';
+import './index.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <main className="bg-gray-50 text-gray-800">
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <section
+          className="min-h-screen flex flex-col items-center justify-center text-center px-6"
+          data-aos="fade-up"
+        >
           <h1 className="text-5xl font-bold text-indigo-600 mb-4">TaskFlow</h1>
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             Organize your tasks, flow through your day
@@ -24,7 +37,7 @@ function App() {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white" data-aos="fade-up">
           <div className="container mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold mb-12">Features</h3>
             <div className="grid md:grid-cols-3 gap-10">
@@ -33,6 +46,7 @@ function App() {
                 <h4 className="text-xl font-semibold mb-2">Smart To-Do Lists</h4>
                 <p>Organize everything with lists, due dates, and smart priority so you finish important work first.</p>
               </div>
+
               <div className="p-6 shadow rounded-lg hover:shadow-lg transition">
                 <div className="text-indigo-600 text-4xl mb-4">📅</div>
                 <h4 className="text-xl font-semibold mb-2">Calendar & Planner</h4>
@@ -48,7 +62,7 @@ function App() {
         </section>
 
         {/* Reviews Section */}
-        <section className="py-16 bg-gray-100">
+        <section className="py-16 bg-gray-100" data-aos="fade-up">
           <div className="container mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold mb-12">What Our Users Say</h3>
             <div className="grid md:grid-cols-3 gap-10">
@@ -69,7 +83,7 @@ function App() {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white" data-aos="fade-up">
           <div className="container mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold mb-12">Pricing</h3>
             <div className="grid md:grid-cols-3 gap-10">
@@ -82,7 +96,7 @@ function App() {
                 </button>
               </div>
               {/* Pro */}
-              <div className="p-6 shadow rounded-lg border-2 border-indigo-600">
+              <div className="p-6 shadow rounded-lg border-2 border-indigo-600 scale-105">
                 <h4 className="text-2xl font-semibold mb-2">Pro</h4>
                 <p className="mb-4 text-gray-600">Advanced reminders, exportable reports, advanced priority</p>
                 <p className="text-indigo-600 font-bold mb-4">$6/month</p>
@@ -104,7 +118,7 @@ function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-8 bg-gray-900 text-gray-300 text-center">
+        <footer className="py-8 bg-gray-900 text-gray-300 text-center" data-aos="fade-up">
           <p className="mb-2">Contact: hello@taskflow.app · +1 (555) 123-4567</p>
           <div className="flex justify-center gap-6 mb-4">
             <a href="#" className="hover:text-white">Facebook</a>
@@ -119,4 +133,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
